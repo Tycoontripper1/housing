@@ -37,6 +37,18 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.active-page, .first-page{
+  background-color: #F4511E;
+  color: white;
+}
+
+.skeleton{
+  animation: loading 1s linear infinite alternate;
+}
+
+.close-timer{
+  animation: closeTimer 5s forwards linear;
+}
 
 :root {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

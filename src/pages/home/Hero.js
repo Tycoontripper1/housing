@@ -73,7 +73,7 @@ const up = {
   return (
     <div className='hero relative text-white dark:text-white '>
       <div className='absolute z-10 h-full w-full bg-black/30 dark:bg-black/70 '></div>
-      <div className=' md:px-12 lg:px-28 px-6 relative z-20 top-0 left-0 '>
+      <div className=' md:px-12 lg:px-28 px-5 relative z-20 top-0 left-0 '>
       <Header />
       </div>
       <section className='md:px-12 lg:px-28 px-6 md:py-24 pb-40 relative py-12 z-10 h-full w-full flex  lg:flex-row flex-col gap-10 items-center '>

@@ -64,10 +64,10 @@ export const Care = () => {
     )
   })
   return (
-    <motion.section variants={cardVariants} initial='offscreen' whileInView="onscreen" viewport={{ once: true, amount: 0 }} transition={{ ease: "easeOut", duration: 2 }} className='p-6 md:px-28 md:py-28 dark:bg-[#000] text-black dark:text-[#fff]'>
+    <motion.section variants={cardVariants} initial='offscreen' whileInView="onscreen" viewport={{ once: true, amount: 0 }} transition={{ ease: "easeOut", duration: 2 }} className='p-5 md:px-28 md:py-28 dark:bg-[#000] text-black dark:text-[#fff]'>
         <div className='w-full '>
         <h1 className='font-bold text-2xl sm:text-3xl lg:text-4xl capitalize'><span className='border-b-4 border-red1x'>minimum living cost </span>takes care of everything</h1>
-        <motion.section className='flex flex-col-reverse lg:flex-row items-center gap-16'>
+        <motion.section className='flex flex-col-reverse lg:flex-row  py-6 items-center gap-16'>
             <motion.div variants={item} initial="slideOutRight" whileInView="slideInLeft" viewport={{ once: true, amount: 0 }} >
             <img loading='lazy' src={CareImg} alt="care" className='max-w-sm' />
             </motion.div>
