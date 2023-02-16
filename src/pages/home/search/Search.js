@@ -1,5 +1,6 @@
 import React from 'react'
 import { SearchImages } from './SearchImages.js'
+import { Form } from '../form/Form.js'
 
 export const Search = () => {
   return (
@@ -16,7 +17,7 @@ export const Search = () => {
             <button type='button' id='showRooms' className='font-semibold text-white bg-red1x active:translate-y-4 hover:border-0.5 hover:border-red1x hover:text-red1x hover:bg-white hover:shadow-xl py-5 px-7 rounded-fifteen transition-colors duration-500'>Search Rooms</button>
         </div>
     </section>
-    {/* <Form /> */}
+    <Form />
 </main>
   )
 }

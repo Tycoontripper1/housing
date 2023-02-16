@@ -6,7 +6,7 @@ import Group from './../../../assets/images/flex/group.png'
 
 export const SearchImages = () => {
   return (
-    <section className='inter inter-600  text-white text-lg sm:text-2xl'>
+    <section className=' text-white text-lg sm:text-2xl'>
     <div className='flex py-4 lg:py-2 text-center justify-center lg:grid grid-cols-5 gap-x-4 gap-y-1 items-end'>
         <div className='w-fiftyPercent sm:w-auto row-start-1 row-end-7 col-span-3 col-start-1 col-end-4 h-fit flex justify-end items-end'>
             <div className='w-fit relative hover:scale-90 transition-transform ease-in-out duration-500'>

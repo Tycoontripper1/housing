@@ -12,6 +12,33 @@
 @tailwind components;
 @tailwind utilities;
 
+.inter{
+  font-family: 'Inter', sans-serif;
+}
+.inter-400{
+  font-weight: 400;
+}
+.inter-500{
+  font-weight: 500;
+}
+.inter-600{
+  font-weight: 600;
+}
+.inter-700{
+  font-weight: 700;
+}
+.inter-800{
+  font-weight: 800;
+}
+.z-10{
+  z-index: 1;
+}
+
+.flex-form-label{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
 .clash-d {
   font-family: 'Clash Display', sans-serif;
   /* font-family: 'Roboto', sans-serif; */
