@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ListData from "../list/ListData";
+import { Fade } from "react-awesome-reveal";
 
 export const Form = () => {
   const [name, setName] = useState("");
@@ -12,7 +14,9 @@ export const Form = () => {
   const [RoomType, setRoomType] = useState(null);
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
-  const [imageAsset, setImageAsset] = useState(null);
+  const [imageAsset, setImageAsset] = useState('');
+  const [update, setUpdate] = useState(ListData)
+
 
   const saveDetails = () => {
     
@@ -25,10 +29,11 @@ export const Form = () => {
         !RoomType ||
         !state ||
         !price ||
-        !description 
+        !description ||
+        !imageAsset
         
       ) {
-        console.log('error')
+        
         //Show successful toast message
         toast.warning("Required fields can't be empty!!", {
           className: "w-full",
@@ -38,25 +43,51 @@ export const Form = () => {
           id: `${Date.now()}`,
           name: name,
           address: address,
-          moRoom: unit,
+          NoRoom: unit,
           city: city,
           roomType: RoomType,
           state: state,
           description: description,
           img: imageAsset,
-          price: price,
+          price: `$${price}`,
         };
-        // saveItem(data);
+        update.push(data)
+        
+       
         toast.success("Data Uploaded successfully 😊", { className: "w-full" });
+        // to clear all input data
         clearData();
+        
       }
     } catch (error) {
       console.log(error);
-      // toast.warning("Error while uploading : Try AGain 🙇", {
-      //   className: "w-full",
-      // });
+     
     }
   };
+
+  
+
+const onImageChange = (event) => {
+ if (event.target.files && event.target.files[0]) {
+   setImageAsset(URL.createObjectURL(event.target.files[0]));
+ }
+}
+
+
+useEffect(() => {
+  localStorage.setItem('update', JSON.stringify(update));
+}, [update]);
+
+
+
+// useEffect(() => {
+//   const json = localStorage.getItem("update")
+//   const savedUpdate = JSON.parse(json)
+//   if(savedUpdate){
+//     setUpdate(savedUpdate)
+  
+//   }
+// }, []);
 
   const clearData = () => {
     setName("");
@@ -107,7 +138,9 @@ export const Form = () => {
           <h1 className="text-red1x poppins poppins-700 text-xl sm:text-3xl text-center">
             Add A New Property
           </h1>
+          <Fade>
           <section className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 pt-8 sm:pt-16 gap-4 sm:gap-10">
+            
             <div className="flex flex-col gap-4 items-start col-span-1">
               <p className='flex-form-label after:content-["*"] after:ml-0.5 after:text-red1x'>
                 Name
@@ -303,6 +336,7 @@ export const Form = () => {
                   type="file"
                   multiple
                   id="listingImg"
+                  onChange={onImageChange}
                   name="listing-img"
                   className="w-full bg-red-400 absolute top-fiftyPercent -translate-y-fiftyPercent h-full opacity-0"
                 />
@@ -330,7 +364,9 @@ export const Form = () => {
                 Add New Property
               </button>
             </div>
+           
           </section>
+          </Fade>
         </motion.form>
       </section>
     </>

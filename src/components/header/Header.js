@@ -4,6 +4,8 @@ import { BsCart3 } from "react-icons/bs";
 import logo from '../../assets/images/logo/logo.png'
 import { AiOutlineMenu } from "react-icons/ai";
 import { ImCancelCircle } from "react-icons/im";
+import {FiSettings} from 'react-icons/fi'
+import {BsMoon} from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../../Context";
 
@@ -96,12 +98,12 @@ export const Header = () => {
 
         {/* NAV ICONS */}
                {/* NAV ICONS */}
-               <div className="border md:block hidden  border-white dark:border-slate-600 rounded-full">
-          <button className="p-2 md:py-2 md:px-4 bg-white rounded-l-full dark:bg-black">
-            <BiSearch onClick={() => setDarkTheme(false)} />
+               <div className="border md:block hidden shadow-xl  border-white dark:border-slate-600 rounded-full">
+          <button className="p-2 md:py-2 md:px-4 bg-white/80 rounded-l-full dark:bg-transparent">
+            <FiSettings onClick={() => setDarkTheme(false)} className='text-md text-red1x dark:text-white' />
           </button>
-          <button className="p-2 md:py-2 md:px-4 rounded-r-full bg-white/80 dark:bg-slate-600 dark:border-slate-600">
-            <BsCart3 onClick={() => setDarkTheme(true)} />
+          <button className="p-2 md:py-2 md:px-4 rounded-r-full bg-transparent  dark:bg-slate-600 dark:border-slate-600">
+            <BsMoon onClick={() => setDarkTheme(true)} className='text-md dark:text-red1x' />
           </button>
         </div>
         <div className=" md:hidden text-3xl" onClick={toggleNav}>

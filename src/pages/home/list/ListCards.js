@@ -21,7 +21,7 @@ export const ListCards = ({
   return (
     <div className="dm shadow-lg rounded-26.62px w-ninetyPercent sm:w-auto max-w-[350px] hover:scale-90 transition-transform ease-in-out duration-500 mx-auto">
       <div>
-        <img loading="lazy" src={img} alt="listing" />
+        <img loading="lazy" src={img} alt="listing" className="w-[350px] h-[300px]" />
         <section className="bg-white text-black dark:bg-black/40 dark:text-white text-left rounded-b-26.62px pt-18px space-y-18px">
           <h1 className="pl-7 pr-5 dm-700 text-lg sm:text-2xl">{address}</h1>
           <div className="pl-7 pr-5">
