@@ -25,6 +25,16 @@ export const Header = () => {
     
   };
 
+  const switchOn =()=>{
+    setDarkTheme(false)
+    toggleNav()
+  }
+
+  const switchOff =()=>{
+    setDarkTheme(true)
+    toggleNav()
+  }
+
   // Showing or hide navigation for mobile
   const toggleNav = () => {
     mobileNav.current.classList.toggle("w-0");
@@ -39,32 +49,34 @@ export const Header = () => {
           onClick={toggleNav}
           className="absolute top-8 right-6 w-[26px] h-[26px] dark:text-white"
         />
-        
+        <div className="flex flex-col justify-between ">
+          
         <ul className="px-[30px]">
           <li onClick={toggleNav} data-id="home" className="mobile-nav hover:text-red1x">
             <Link to="/">Home</Link>
           </li>
           <li onClick={toggleNav} data-id="marketplace" className="mobile-nav hover:text-red1x">
-            <Link to="/marketplace">Landlord</Link>
+            <Link to="/landlords">Landlord</Link>
           </li>
           <li onClick={toggleNav} data-id="auctions" className="mobile-nav hover:text-red1x">
-            <Link to="/auctions">Tenants</Link>
+            <Link to="/tenants">Tenants</Link>
           </li>
           <li onClick={toggleNav} data-id="drop" className="mobile-nav hover:text-red1x">
-            <Link to="/drop">Contact Us</Link>
+            <Link to="/contacts">Contact Us</Link>
           </li>
         </ul>
          {/* NAV ICONS */}
-         <div className="border px-[30px]  border-white dark:border-slate-600 rounded-full">
-          <button className="p-2 md:py-2 md:px-4 bg-white rounded-l-full dark:bg-black">
-            <BiSearch onClick={() => setDarkTheme(false)} />
+         <div className=" w-[60%]  px-[30px] mt-[400px] border-white dark:border-slate-600 rounded-full">
+         <button className="p-2 md:py-2 md:px-4 bg-white/80 rounded-l-full dark:bg-transparent">
+            <FiSettings onClick={switchOn}  className='text-md text-red1x dark:text-white' />
           </button>
-          <button className="p-2 md:py-2 md:px-4 rounded-r-full bg-white/80 dark:bg-slate-600 dark:border-slate-600">
-            <BsCart3 onClick={() => setDarkTheme(true)} />
+          <button className="p-2 md:py-2 md:px-4 rounded-r-full bg-transparent  dark:bg-slate-600 dark:border-slate-600">
+            <BsMoon onClick={switchOff} className='text-md dark:text-red1x' />
           </button>
         </div>
         
       </div>
+        </div>
 
       <div className="py-6 md:py-6 md:px-0 border-b  overflow-hidden w-full justify-between flex  mx-auto items-center  ">
         {/* hambugger button */}
@@ -85,14 +97,14 @@ export const Header = () => {
           <li onClick={() => switchActive("home")} className="active hover:text-red1x transition-colors duration-500 " id="home">
             <Link to="/">Home</Link>
           </li>
-          <li onClick={() => switchActive("marketplace")} id="marketplace" className="hover:text-red1x transition-colors duration-500">
-            <Link to="/marketplace">Landlord</Link>
+          <li onClick={() => switchActive("landlords")} id="landlords" className="hover:text-red1x transition-colors duration-500">
+            <Link to="/landlords">Landlord</Link>
           </li>
-          <li onClick={() => switchActive("auctions")} id="auctions"className="hover:text-red1x transition-colors duration-500">
-            <Link to="/auctions">Tenants</Link>
+          <li onClick={() => switchActive("tenants")} id="tenants"className="hover:text-red1x transition-colors duration-500">
+            <Link to="/tenants">Tenants</Link>
           </li>
-          <li onClick={() => switchActive("drop")} id="drop"className="hover:text-red1x transition-colors duration-500">
-            <Link to="/drop">Contact Us</Link>
+          <li onClick={() => switchActive("contacts")} id="contacts"className="hover:text-red1x transition-colors duration-500">
+            <Link to="/contacts">Contact Us</Link>
           </li>
         </ul>
 
